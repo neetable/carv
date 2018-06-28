@@ -10,41 +10,40 @@ import {
   Text,
   View
 } from 'react-native';
-import Screen1 from "./App/Containers/Screen1";
-import Screen2 from "./App/Containers/Screen2";
-import TabComponent from "./App/Components/TabComponent/TabComponent"
+import Launch from "./App/Containers/Launch";
+import Home from "./App/Containers/Home";
 
 type Props = {};
 export default class App extends Component<Props> {
 
-  constructor(props){
+  constructor(props) {
     super(props);
+    console.disableYellowBox = true;
     this.state = {
-      screen: 'screen1'
+      screen: 'Launch'
     }
     this.changeState = this.changeState.bind(this);
   }
 
-  changeState(stateVal){
+  changeState(stateVal) {
     this.setState({
       screen: stateVal
     })
   }
   render() {
-    if(this.state.screen === 'screen1'){
-      return(
-        <Screen1 changeState={this.changeState}/>
+    if (this.state.screen === 'Launch') {
+      return (
+        <Launch changeState={this.changeState} />
       )
-      
-    }else{
-      return(
-        // <Screen2 changeState={this.changeState}/>
-        <TabComponent changeState={this.changeState}/>
 
+    } else {
+      return (
+        <Home changeState={this.changeState} />
+        // <TabComponent changeState={this.changeState}/>
       )
-      
+
     }
-    
+
   }
 }
 

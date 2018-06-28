@@ -7,15 +7,12 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
-import headerStyle from './HeaderStyle'
+import style from './HeaderStyle'
 export default class HeaderComponent extends Component {
     render() {
         return (
-            <View style = {headerStyle.imageView}>
-            <Image
-                style={headerStyle.image}
-                source={require('../../../images/group11.png')}
-            />
+            <View style={style.container}>
+                <Text style={style.headerText}>Activity</Text>
             </View>
         )
     }

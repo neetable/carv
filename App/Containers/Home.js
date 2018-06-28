@@ -5,13 +5,12 @@ import {
   Text,
   View
 } from 'react-native';
-import Screen1Component from '../Components/Screen1Component';
-export default class Screen1 extends Component{
-
+import Home from '../Components/HomeComponent/HomeComponent';
+export default class HomeContainer extends Component{
     render(){
         return(
-            <Screen1Component {...this.props}/>
-
+            <Home {...this.props}/>
         )
+        
     }
 }
